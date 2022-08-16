@@ -1,6 +1,6 @@
 {
   "name": "@gearbox-protocol/eslint-config",
-  "version": "0.0.0-semantic",
+  "version": "0.0.0-semantic-release",
   "description": "Eslint config for gearbox projects",
   "main": "index.js",
   "files": [
