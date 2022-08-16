@@ -2,7 +2,6 @@ const name = "prettier-config";
 const srcRoot = `packages/${name}`;
 
 module.exports = {
-  dryRun: true,
   branches: ["main"],
   commitPaths: [`${srcRoot}/*`],
   plugins: [
