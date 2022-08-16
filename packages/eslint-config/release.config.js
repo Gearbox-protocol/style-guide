@@ -3,6 +3,7 @@ const srcRoot = `packages/${name}`;
 
 module.exports = {
   dryRun: true,
+  branch: "main",
   commitPaths: [`${srcRoot}/*`],
   plugins: [
     "@semantic-release/commit-analyzer",
