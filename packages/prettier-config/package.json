@@ -13,6 +13,9 @@
   "files": [
     "index.json"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "peerDependencies": {
     "prettier": "*"
   }
