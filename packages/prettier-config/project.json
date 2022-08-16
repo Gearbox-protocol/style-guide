@@ -1,0 +1,15 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "packages/prettier-config/src",
+  "projectType": "library",
+  "targets": {
+    "release": {
+      "executor": "nx:run-commands",
+      "outputs": [],
+      "options": {
+        "command": "npx semantic-release-plus --extends ./packages/prettier-config/release.config.js",
+        "parallel": false
+      }
+    }
+  }
+}

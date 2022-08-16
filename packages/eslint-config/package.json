@@ -1,0 +1,27 @@
+{
+  "name": "@gearbox-protocol/eslint-config",
+  "version": "0.0.0-semantic-release",
+  "description": "Eslint config for gearbox projects",
+  "main": "index.js",
+  "files": [
+    "index.js"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Gearbox-protocol/style-guide.git",
+    "directory": "packages/eslint-config"
+  },
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.33.0",
+    "@typescript-eslint/parser": "^5.33.0",
+    "eslint-config-alloy": "^4.6.2",
+    "eslint-import-resolver-typescript": "^3.4.1",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-simple-import-sort": "^7.0.0",
+    "eslint-plugin-unused-imports": "^2.0.0"
+  },
+  "peerDependencies": {
+    "eslint": "^8.0.0"
+  }
+}
