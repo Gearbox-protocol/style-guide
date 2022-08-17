@@ -10,8 +10,10 @@ Install:
 $ yarn add -D @gearbox-protocol/prettier-config prettier
 ```
 
-Add `.prettierrc` file to a repo with following content:
+Add following field to `package.json`:
 
-```
-"@gearbox-protocol/prettier-config"
+```json
+{
+  "prettier": "@gearbox-protocol/prettier-config"
+}
 ```
