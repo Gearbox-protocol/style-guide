@@ -10,8 +10,9 @@
         "tagPrefix": "${projectName}-v",
         "commitMessageFormat": "release: bump ${projectName} to ${version} [skip ci]",
         "postTargets": [
-          "${projectName}:publish"
-        ]
+          "eslint-config:publish"
+        ],
+        "skipRootChangelog": true
       }
     },
     "publish": {
