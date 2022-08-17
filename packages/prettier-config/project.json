@@ -3,12 +3,19 @@
   "sourceRoot": "packages/prettier-config/src",
   "projectType": "library",
   "targets": {
+    "build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "echo 'this exists to trick publish executor into using whole folder as output'",
+        "outputPath": "."
+      }
+    },
     "version": {
       "executor": "@jscutlery/semver:version",
       "options": {
         "preset": "angular",
         "tagPrefix": "${projectName}-v",
-        "commitMessageFormat": "release: bump ${projectName} to ${version} [skip ci]",
+        "commitMessageFormat": "chore(release): bump ${projectName} to ${version} [skip ci]",
         "postTargets": [
           "prettier-config:publish"
         ],
