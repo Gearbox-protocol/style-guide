@@ -6,7 +6,7 @@
     "build": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "echo 'this exists to trick publish executor into using whole folder as output'",
+        "command": "echo 'trick publish executor into using whole folder as output'",
         "outputPath": "packages/eslint-config"
       }
     },
