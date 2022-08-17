@@ -7,7 +7,7 @@
       "executor": "nx:run-commands",
       "options": {
         "command": "echo 'this exists to trick publish executor into using whole folder as output'",
-        "outputPath": "."
+        "outputPath": "packages/eslint-config"
       }
     },
     "version": {
@@ -15,7 +15,7 @@
       "options": {
         "preset": "angular",
         "tagPrefix": "${projectName}-v",
-        "commitMessageFormat": "core(release): bump ${projectName} to ${version} [skip ci]",
+        "commitMessageFormat": "chore(release): bump ${projectName} to ${version} [skip ci]",
         "postTargets": [
           "eslint-config:publish"
         ],

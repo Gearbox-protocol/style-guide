@@ -7,7 +7,7 @@
       "executor": "nx:run-commands",
       "options": {
         "command": "echo 'this exists to trick publish executor into using whole folder as output'",
-        "outputPath": "."
+        "outputPath": "packages/prettier-config"
       }
     },
     "version": {
