@@ -19,6 +19,7 @@
         "postTargets": [
           "eslint-config:publish"
         ],
+        "push": true,
         "skipRootChangelog": true,
         "skipProjectChangelog": true
       }

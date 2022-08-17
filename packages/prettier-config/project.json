@@ -19,6 +19,7 @@
         "postTargets": [
           "prettier-config:publish"
         ],
+        "push": true,
         "skipRootChangelog": true,
         "skipProjectChangelog": true
       }
