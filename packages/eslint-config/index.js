@@ -10,6 +10,7 @@ module.exports = {
     node: true
   },
   rules: {
+    "@typescript-eslint/consistent-type-assertions": "off",
     "@typescript-eslint/explicit-member-accessibility": "off",
     "@typescript-eslint/member-ordering": "off",
     "@typescript-eslint/no-unused-vars": "off",
