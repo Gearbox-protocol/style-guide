@@ -3,7 +3,6 @@
   "arrowParens": "avoid",
   "bracketSpacing": true,
   "endOfLine": "lf",
-  "explicitTypes": "always",
   "printWidth": 80,
   "singleQuote": false,
   "tabWidth": 2,
