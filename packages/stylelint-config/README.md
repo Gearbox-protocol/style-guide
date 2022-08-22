@@ -7,7 +7,7 @@
 Install:
 
 ```bash
-$ yarn add -D @gearbox-protocol/stylelint-config stylelint
+yarn add -D @gearbox-protocol/stylelint-config stylelint
 ```
 
 Add following `.stylelintrc.json` config:
