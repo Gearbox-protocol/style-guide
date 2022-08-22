@@ -1,6 +1,6 @@
 {
   "name": "@gearbox-protocol/stylelint-config",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Stylelint config for gearbox projects",
   "author": "Konstantin Kuznetsov",
   "license": "MIT",
