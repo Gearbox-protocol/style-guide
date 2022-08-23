@@ -4,7 +4,8 @@
   "description": "Eslint config for gearbox projects",
   "main": "index.js",
   "files": [
-    "index.js"
+    "index.js",
+    "react.js"
   ],
   "license": "MIT",
   "repository": {
