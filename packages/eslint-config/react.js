@@ -10,12 +10,10 @@ module.exports = {
     "plugin:import/typescript",
     "plugin:react-hooks/recommended",
   ],
-  rules: {
-    ...base.rules,
-    "react/no-unused-prop-types": ["off"],
-    "react/jsx-props-no-spreading": ["off"],
-    "react/no-array-index-key": ["off"],
-    "react/require-default-props": ["off"],
-    "react/jsx-no-useless-fragment": ["off"],
+  settings: {
+    ...base.settings,
+    react: {
+      version: "detect",
+    },
   },
 };
