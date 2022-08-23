@@ -14,7 +14,16 @@ Add `.eslintrc.json` file to a repo with following content:
 
 ```json
 {
-  root: true,
-  extends: ["@gearbox-protocol/eslint-config"]
-};
+  "root": true,
+  "extends": ["@gearbox-protocol/eslint-config"]
+}
+```
+
+For React projects use
+
+```json
+{
+  "root": true,
+  "extends": ["@gearbox-protocol/eslint-config/react"]
+}
 ```
