@@ -2,9 +2,14 @@
 
 module.exports = {
   customSyntax: "@stylelint/postcss-css-in-js",
-  extends: ["stylelint-config-standard", "stylelint-config-styled-components"],
-  plugins: ["stylelint-order"],
+  extends: [
+    "stylelint-config-standard",
+    "stylelint-prettier/recommended",
+    "stylelint-config-styled-components",
+  ],
+  plugins: ["stylelint-order", "stylelint-prettier"],
   rules: {
+    "prettier/prettier": true,
     "value-keyword-case": null,
     "function-name-case": null,
     "function-no-unknown": [
