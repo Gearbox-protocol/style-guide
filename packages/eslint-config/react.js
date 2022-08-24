@@ -16,4 +16,7 @@ module.exports = {
       version: "detect",
     },
   },
+  rules: {
+    "react/jsx-no-useless-fragment": ["error", { allowExpressions: true }],
+  },
 };
