@@ -12,10 +12,7 @@ module.exports = {
     "prettier/prettier": true,
     "value-keyword-case": null,
     "function-name-case": null,
-    "function-no-unknown": [
-      true,
-      { ignoreFunctions: ["/^theme./", "/.?\\${/", "`url"] },
-    ],
+    "function-no-unknown": null,
     "order/properties-order": [
       "position",
       "z-index",
