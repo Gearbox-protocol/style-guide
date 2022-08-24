@@ -1,7 +1,7 @@
 "use strict";
 
 module.exports = {
-  customSyntax: "postcss-scss",
+  customSyntax: "@stylelint/postcss-css-in-js",
   extends: [
     "stylelint-config-standard-scss",
     "stylelint-config-styled-components",
