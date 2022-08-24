@@ -27,10 +27,18 @@ module.exports = {
         varsIgnorePattern: "^_",
         args: "after-used",
         argsIgnorePattern: "^_",
-        ignoreRestSiblings: true
+        ignoreRestSiblings: true,
       },
     ],
   },
+  overrides: [
+    {
+      files: ["*.ts", "*.tsx"],
+      rules: {
+        "no-undef": "off",
+      },
+    },
+  ],
   settings: {
     "import/resolver": {
       typescript: {
