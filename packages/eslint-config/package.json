@@ -1,6 +1,6 @@
 {
   "name": "@gearbox-protocol/eslint-config",
-  "version": "1.5.4",
+  "version": "1.5.5",
   "description": "Eslint config for gearbox projects",
   "main": "index.js",
   "files": [
