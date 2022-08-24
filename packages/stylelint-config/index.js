@@ -13,6 +13,7 @@ module.exports = {
     "value-keyword-case": null,
     "function-name-case": null,
     "function-no-unknown": null,
+    "function-whitespace-after": null,
     "order/properties-order": [
       "position",
       "z-index",
