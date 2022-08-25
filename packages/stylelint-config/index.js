@@ -11,6 +11,13 @@ module.exports = {
   plugins: ["stylelint-order", "stylelint-prettier"],
   rules: {
     "prettier/prettier": true,
+    "declaration-empty-line-before": [
+      "always",
+      {
+        except: ["first-nested"],
+        ignore: ["after-comment", "after-declaration"],
+      },
+    ],
     "value-keyword-case": null,
     "function-name-case": null,
     "function-no-unknown": null,
