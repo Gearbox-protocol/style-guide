@@ -1,10 +1,9 @@
 "use strict";
 
 module.exports = {
-  customSyntax: "postcss-scss",
   processors: ["stylelint-processor-styled-components"],
   extends: [
-    "stylelint-config-standard-scss",
+    "stylelint-config-standard",
     "stylelint-config-styled-components",
     "stylelint-prettier/recommended",
   ],
