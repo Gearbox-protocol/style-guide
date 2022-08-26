@@ -17,11 +17,8 @@
     "access": "public"
   },
   "dependencies": {
-    "postcss-scss": "^4.0.4",
-    "postcss-syntax": "^0.36.2",
     "stylelint": "^14.11.0",
     "stylelint-config-prettier": "^9.0.3",
-    "stylelint-config-standard-scss": "^5.0.0",
     "stylelint-config-styled-components": "^0.1.1",
     "stylelint-order": "^5.0.0",
     "stylelint-prettier": "^2.0.0",
