@@ -7,9 +7,7 @@ const localConfigPath = path.resolve(process.cwd(), ".eslint.local.json");
 try {
   const contents = fs.readFileSync(localConfigPath, { encoding: "utf-8" });
   localConfig = JSON.parse(contents);
-} catch (e) {
-  console.log("local rules not found");
-}
+} catch (e) {}
 
 module.exports = {
   plugins: ["simple-import-sort", "unused-imports"],
