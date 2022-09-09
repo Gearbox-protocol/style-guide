@@ -1,3 +1,16 @@
+const path = require("path");
+const fs = require("fs");
+
+// Following code allows to override some rules in .eslint.local.json file
+let localConfig = { rules: {} };
+const localConfigPath = path.resolve(process.cwd(), ".eslint.local.json");
+try {
+  const contents = fs.readFileSync(localConfigPath, { encoding: "utf-8" });
+  localConfig = JSON.parse(contents);
+} catch (e) {
+  console.log("local rules not found");
+}
+
 module.exports = {
   plugins: ["simple-import-sort", "unused-imports"],
   extends: [
@@ -19,7 +32,7 @@ module.exports = {
     "max-params": "off",
     "simple-import-sort/imports": "error",
     "simple-import-sort/exports": "error",
-    "unused-imports/no-unused-imports": "error",
+    "unused-imports/no-unused-imports": "off",
     "unused-imports/no-unused-vars": [
       "warn",
       {
@@ -30,6 +43,7 @@ module.exports = {
         ignoreRestSiblings: true,
       },
     ],
+    ...localConfig.rules,
   },
   overrides: [
     {
