@@ -17,15 +17,15 @@
     "access": "public"
   },
   "dependencies": {
-    "stylelint": "^14.11.0",
-    "stylelint-config-prettier": "^9.0.3",
-    "stylelint-config-standard": "^28.0.0",
+    "stylelint": "^15.10.3",
+    "stylelint-config-prettier": "^9.0.5",
+    "stylelint-config-standard": "^34.0.0",
     "stylelint-config-styled-components": "^0.1.1",
-    "stylelint-order": "^5.0.0",
-    "stylelint-prettier": "^2.0.0",
+    "stylelint-order": "^6.0.3",
+    "stylelint-prettier": "^4.0.2",
     "stylelint-processor-styled-components": "^1.10.0"
   },
   "peerDependencies": {
-    "stylelint": "*"
+    "stylelint": "^15.10.3"
   }
 }

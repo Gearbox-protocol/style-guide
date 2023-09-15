@@ -2,7 +2,16 @@ const name = "prettier-config";
 const srcRoot = `packages/${name}`;
 
 module.exports = {
-  branches: ["main"],
+  branches: [
+    {
+      name: "main",
+    },
+    {
+      name: "next",
+      channel: "next",
+      prerelease: "next",
+    },
+  ],
   commitPaths: [`${srcRoot}/*`],
   tagFormat: name + "-v${version}",
   plugins: [
@@ -11,14 +20,14 @@ module.exports = {
     [
       "@semantic-release/npm",
       {
-        pkgRoot: srcRoot
-      }
+        pkgRoot: srcRoot,
+      },
     ],
     [
       "@semantic-release/git",
       {
-        assets: [`${srcRoot}/package.json`]
-      }
-    ]
-  ]
+        assets: [`${srcRoot}/package.json`],
+      },
+    ],
+  ],
 };

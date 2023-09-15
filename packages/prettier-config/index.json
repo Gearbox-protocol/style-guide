@@ -7,14 +7,5 @@
   "singleQuote": false,
   "tabWidth": 2,
   "trailingComma": "all",
-  "useTabs": false,
-  "overrides": [
-    {
-      "files": "*.sol",
-      "options": {
-        "tabWidth": 4,
-        "explicitTypes": "always"
-      }
-    }
-  ]
+  "useTabs": false
 }

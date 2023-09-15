@@ -2,7 +2,16 @@ const name = "stylelint-config";
 const srcRoot = `packages/${name}`;
 
 module.exports = {
-  branches: ["main"],
+  branches: [
+    {
+      name: "main",
+    },
+    {
+      name: "next",
+      channel: "next",
+      prerelease: "next",
+    },
+  ],
   commitPaths: [`${srcRoot}/*`],
   tagFormat: name + "-v${version}",
   plugins: [

@@ -17,7 +17,6 @@
     "access": "public"
   },
   "peerDependencies": {
-    "prettier": "*",
-    "prettier-plugin-solidity": "*"
+    "prettier": "^3.0.3"
   }
 }

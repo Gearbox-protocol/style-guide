@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - next
 
 env:
   HUSKY: 0
@@ -20,8 +21,8 @@ jobs:
       - name: Setup node
         uses: actions/setup-node@v3
         with:
-          node-version: "16"
           cache: "yarn"
+          node-version-file: ".nvmrc"
           # This doesn't just set the registry url, but also sets
           # the right configuration in .npmrc that reads NPM token
           # from NPM_AUTH_TOKEN environment variable.
@@ -30,7 +31,7 @@ jobs:
           registry-url: https://registry.npmjs.org
 
       - name: Derive appropriate SHAs for base and head for `nx affected` commands
-        uses: nrwl/nx-set-shas@v2
+        uses: nrwl/nx-set-shas@v3
 
       - name: Install dependencies
         run: yarn install --frozen-lockfile
