@@ -1,4 +1,5 @@
 {
+  "name": "eslint-config",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "packages/eslint-config/src",
   "projectType": "library",
@@ -6,9 +7,9 @@
     "build": {
       "executor": "nx:run-commands",
       "options": {
-        "command": "echo 'trick publish executor into using whole folder as output'",
-        "outputPath": "packages/eslint-config"
-      }
+        "command": "echo 'trick publish executor into using whole folder as output'"
+      },
+      "outputs": ["{workspaceRoot}/packages/eslint-config"]
     },
     "version": {
       "executor": "@jscutlery/semver:version",
