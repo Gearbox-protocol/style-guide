@@ -21,6 +21,7 @@
         "push": true,
         "skipRootChangelog": true,
         "skipProjectChangelog": true,
+        "baseBranch": "",
         "dryRun": true
       }
     },
