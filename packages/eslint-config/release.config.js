@@ -6,11 +6,6 @@ module.exports = {
     {
       name: "main",
     },
-    {
-      name: "next",
-      channel: "next",
-      prerelease: "next",
-    },
   ],
   commitPaths: [`${srcRoot}/*`],
   tagFormat: name + "-v${version}",

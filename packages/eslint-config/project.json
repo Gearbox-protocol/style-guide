@@ -21,9 +21,6 @@
         "push": true,
         "skipRootChangelog": true,
         "skipProjectChangelog": true,
-        "baseBranch": "next",
-        "releaseAs": "prerelease",
-        "preid": "next",
         "dryRun": true
       }
     },
