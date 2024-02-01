@@ -41,6 +41,13 @@ module.exports = {
         ignoreRestSiblings: true,
       },
     ],
+    // make sure this is disabled, since tsc already checks this
+    // https://typescript-eslint.io/linting/troubleshooting/performance-troubleshooting/#eslint-plugin-import
+    "import/named": "off",
+    "import/namespace": "off",
+    "import/default": "off",
+    "import/no-named-as-default-member": "off",
+    "import/no-unresolved": "off",
     ...localConfig.rules,
   },
   overrides: [
