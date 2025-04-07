@@ -1,6 +1,6 @@
 {
   "name": "@gearbox-protocol/prettier-config",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Prettier config for gearbox projects",
   "author": "Konstantin Kuznetsov",
   "license": "MIT",
