@@ -1,0 +1,24 @@
+{
+  "name": "@gearbox-protocol/biome-config",
+  "version": "1.0.0",
+  "description": "Biome config for gearbox projects",
+  "type": "module",
+  "files": [
+    "biome.json"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Gearbox-protocol/style-guide.git",
+    "directory": "packages/biome-config"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "peerDependencies": {
+    "@biomejs/biome": "^2.0.5"
+  },
+  "exports": {
+    ".": "./biome.json"
+  }
+}
