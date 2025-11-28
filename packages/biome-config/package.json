@@ -1,6 +1,6 @@
 {
   "name": "@gearbox-protocol/biome-config",
-  "version": "1.0.13",
+  "version": "1.0.14",
   "description": "Biome config for gearbox projects",
   "type": "module",
   "files": [
@@ -16,7 +16,7 @@
     "access": "public"
   },
   "peerDependencies": {
-    "@biomejs/biome": "^2.3.7"
+    "@biomejs/biome": "^2.3.8"
   },
   "exports": {
     ".": "./biome.json"
