@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "prepare": "husky install"
+    "prepare": "husky"
   },
   "private": true,
   "workspaces": [
@@ -27,10 +27,10 @@
   },
   "devDependencies": {
     "@anolilab/multi-semantic-release": "^4.4.4",
-    "@commitlint/cli": "^17.7.1",
-    "@commitlint/config-angular": "^17.7.0",
-    "@commitlint/config-conventional": "^17.7.0",
-    "husky": "^8.0.3",
+    "@commitlint/cli": "^21.0.2",
+    "@commitlint/config-angular": "^21.0.2",
+    "@commitlint/config-conventional": "^21.0.2",
+    "husky": "^9.1.7",
     "prettier": "^3.0.3",
     "semantic-release": "^25.0.0"
   },
