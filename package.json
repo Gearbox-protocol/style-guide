@@ -9,17 +9,30 @@
   "workspaces": [
     "packages/*"
   ],
+  "release": {
+    "branches": [
+      "main",
+      {
+        "name": "next",
+        "channel": "next",
+        "prerelease": "next"
+      }
+    ],
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/npm",
+      "@semantic-release/github"
+    ]
+  },
   "devDependencies": {
+    "@anolilab/multi-semantic-release": "^4.4.4",
     "@commitlint/cli": "^17.7.1",
     "@commitlint/config-angular": "^17.7.0",
     "@commitlint/config-conventional": "^17.7.0",
-    "@jscutlery/semver": "^3.1.0",
-    "@nrwl/js": "16.8.1",
-    "@nrwl/workspace": "16.8.1",
     "husky": "^8.0.3",
-    "ngx-deploy-npm": "^7.0.1",
-    "nx": "^16.8.1",
-    "prettier": "^3.0.3"
+    "prettier": "^3.0.3",
+    "semantic-release": "^25.0.0"
   },
   "dependencies": {},
   "packageManager": "yarn@1.22.22+sha1.ac34549e6aa8e7ead463a7407e1c7390f61a6610"
