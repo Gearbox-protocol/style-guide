@@ -18,26 +18,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
-          # semantic-release needs full history and tags
           fetch-depth: 0
 
+      - name: Install pnpm
+        uses: pnpm/action-setup@v6
+
       - name: Setup node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
-          cache: yarn
           node-version-file: .nvmrc
-          # Do NOT set registry-url: it writes an _authToken line into .npmrc
-          # which prevents npm from attempting the OIDC token exchange.
 
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
+        run: pnpm install
 
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          # Do NOT set NPM_TOKEN — any value, even an empty string, disables
-          # OIDC trusted publishing and makes npm attempt classic token auth.
-        # TODO: drop --dry-run once trusted publishers are configured on npmjs.com
-        run: npx multi-semantic-release --dry-run
+        run: pnpm exec multi-semantic-release
