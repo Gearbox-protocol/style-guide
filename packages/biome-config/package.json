@@ -16,7 +16,7 @@
     "access": "public"
   },
   "peerDependencies": {
-    "@biomejs/biome": "^2.4.15"
+    "@biomejs/biome": "^2.5.0"
   },
   "exports": {
     ".": "./biome.json"
