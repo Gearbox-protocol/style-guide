@@ -1,0 +1,39 @@
+name: release
+
+on:
+  push:
+    branches: [main, next]
+
+env:
+  HUSKY: 0
+
+permissions:
+  contents: write # push tags, GitHub releases
+  issues: write # semantic-release comments
+  pull-requests: write # semantic-release comments
+  id-token: write # npm OIDC trusted publishing
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v6
+
+      - name: Setup node
+        uses: actions/setup-node@v6
+        with:
+          node-version-file: .nvmrc
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: pnpm exec multi-semantic-release

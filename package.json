@@ -3,24 +3,34 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "prepare": "husky install"
+    "prepare": "husky"
   },
   "private": true,
-  "workspaces": [
-    "packages/*"
-  ],
-  "devDependencies": {
-    "@commitlint/cli": "^17.0.3",
-    "@commitlint/config-angular": "^17.0.0",
-    "@commitlint/config-conventional": "^17.0.3",
-    "@jscutlery/semver": "^2.26.0",
-    "@nrwl/cli": "14.5.6",
-    "@nrwl/js": "14.5.6",
-    "@nrwl/workspace": "14.5.6",
-    "husky": "^8.0.0",
-    "ngx-deploy-npm": "^4.2.0",
-    "nx": "^14.5.6",
-    "prettier": "^2.7.1"
+  "release": {
+    "branches": [
+      "main",
+      {
+        "name": "next",
+        "channel": "next",
+        "prerelease": "next"
+      }
+    ],
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/npm",
+      "@semantic-release/github"
+    ]
   },
-  "dependencies": {}
+  "devDependencies": {
+    "@anolilab/multi-semantic-release": "^4.4.4",
+    "@commitlint/cli": "^21.0.2",
+    "@commitlint/config-angular": "^21.0.2",
+    "@commitlint/config-conventional": "^21.0.2",
+    "husky": "^9.1.7",
+    "prettier": "^3.0.3",
+    "semantic-release": "^25.0.0"
+  },
+  "dependencies": {},
+  "packageManager": "pnpm@11.6.0+sha512.9a36518224080c6fe5165afdcfe79bfa118c29be703f3f462b1e32efe1e98e47e8750b148e08286250aad4113cc7993ca413c4e2cd447752708c2ee5751bc95f"
 }

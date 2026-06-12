@@ -8,12 +8,12 @@
   "tabWidth": 2,
   "trailingComma": "all",
   "useTabs": false,
+  "embeddedLanguageFormatting": "off",
   "overrides": [
     {
-      "files": "*.sol",
+      "files": ["*.yml", "*.yaml"],
       "options": {
-        "tabWidth": 4,
-        "explicitTypes": "always"
+        "bracketSpacing": false
       }
     }
   ]
