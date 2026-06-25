@@ -1,26 +1,31 @@
 {
   "$schema": "https://biomejs.dev/schemas/2.5.1/schema.json",
+  "assist": {
+    "actions": {
+      "source": {
+        "organizeImports": "on"
+      }
+    },
+    "enabled": true
+  },
+  "css": {
+    "parser": {
+      "tailwindDirectives": true
+    }
+  },
   "formatter": {
     "enabled": true,
     "indentStyle": "space"
-  },
-  "linter": {
-    "enabled": true,
-    "rules": {
-      "recommended": true
-    }
   },
   "javascript": {
     "formatter": {
       "arrowParentheses": "asNeeded"
     }
   },
-  "assist": {
+  "linter": {
     "enabled": true,
-    "actions": {
-      "source": {
-        "organizeImports": "on"
-      }
+    "rules": {
+      "recommended": true
     }
   }
 }
