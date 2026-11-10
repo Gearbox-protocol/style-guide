@@ -166,6 +166,8 @@ overrides:
   minimatch@>=9.0.0 <9.0.7: ^9.0.7
   postcss@<8.5.18: ^8.5.32
 
+packageExtensionsChecksum: sha256-iffa0lGurBG5WCcYkIIpH7UoHGhw54LM3ika5qMyXlo=
+
 importers:
 
   .:
@@ -1034,6 +1036,10 @@ packages:
     resolution: {integrity: sha512-4OBtMLJYmAWPHMxqpC2yijvdq1DLyX8aiG5H/qQLBHaeh7H2vCDGamXGA3hi9zvcA7NULAXpgLjQIHHgt5p1eQ==}
     engines: {node: ^22.14.0 || >=24.10.0}
     os: [darwin, linux, win32]
+
+  '@visulima/yaml@2.0.0':
+    resolution: {integrity: sha512-4/JYuxyzAhHmoI49qBqQ60WkX7mjUiNYv2Z4WvIaV6iVdNjLwq2Xq8MmF/bWagb4aDo4oQg6Uhenv4woItkmAg==}
+    engines: {node: ^22.14.0 || >=24.10.0}
 
   acorn-jsx@5.3.2:
     resolution: {integrity: sha512-rq9s+JNhf0IChjtDXxllJ7g41oZk5SlXtp0LHwyA5cejwn7vKmKp4pPri6YEePv2PU65sAsegbXtIinmDFDXgQ==}
@@ -3367,8 +3373,9 @@ snapshots:
   '@anolilab/multi-semantic-release@4.6.3(semantic-release@25.0.9(supports-color@7.2.0)(typescript@7.0.2))(supports-color@7.2.0)':
     dependencies:
       '@semrel-extra/topo': 1.14.1
-      '@visulima/fs': 7.0.0
+      '@visulima/fs': 7.0.0(@visulima/yaml@2.0.0)
       '@visulima/path': 3.1.0
+      '@visulima/yaml': 2.0.0
       cosmiconfig: 10.0.1
       debug: 4.4.3(supports-color@7.2.0)
       detect-indent: 7.0.2
@@ -3383,7 +3390,6 @@ snapshots:
       yaml: 2.9.1
       yargs: 18.2.0
     transitivePeerDependencies:
-      - '@visulima/yaml'
       - ini
       - json5
       - jsonc-parser
@@ -4078,13 +4084,17 @@ snapshots:
   '@unrs/resolver-binding-win32-x64-msvc@1.13.0':
     optional: true
 
-  '@visulima/fs@7.0.0':
+  '@visulima/fs@7.0.0(@visulima/yaml@2.0.0)':
     dependencies:
       '@visulima/path': 5.0.0
+    optionalDependencies:
+      '@visulima/yaml': 2.0.0
 
   '@visulima/path@3.1.0': {}
 
   '@visulima/path@5.0.0': {}
+
+  '@visulima/yaml@2.0.0': {}
 
   acorn-jsx@5.3.2(acorn@8.19.0):
     dependencies:
