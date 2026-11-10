@@ -12,5 +12,13 @@
   "files.eol": "\n",
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "debug.javascript.defaultRuntimeExecutable": {
+    "pwa-node": "${workspaceFolder}/.vscode/mise-tools/node"
+  },
+  "go.alternateTools": {
+    "go": "${workspaceFolder}/.vscode/mise-tools/go",
+    "dlv": "${workspaceFolder}/.vscode/mise-tools/dlv",
+    "gopls": "${workspaceFolder}/.vscode/mise-tools/gopls"
   }
 }
