@@ -1,0 +1,60 @@
+name: biome-sync
+
+on:
+  pull_request:
+    paths:
+      - packages/biome-config/package.json
+
+env:
+  HUSKY: 0
+
+permissions: {}
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  sync:
+    name: Sync biome peer range and schema
+    if: github.event.pull_request.user.login == 'dependabot[bot]' && github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # push sync commit to Dependabot branch
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.head_ref }}
+          persist-credentials: false
+
+      - name: Setup pnpm and node
+        uses: pnpm/setup@fa36a5ef7dcdefc3a7cb25655c122e00cf6e636e # v3.1.2
+        with:
+          node-version-file: .nvmrc
+          install: false
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Sync peer range and schema
+        working-directory: packages/biome-config
+        run: |
+          jq '.peerDependencies["@biomejs/biome"] = "^" + .devDependencies["@biomejs/biome"]' package.json > package.json.tmp
+          mv package.json.tmp package.json
+          pnpm exec biome migrate --write
+
+      - name: Commit and push
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Already in sync"
+            exit 0
+          fi
+          gh auth setup-git
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "fix(biome-config): sync biome peer range and schema [dependabot skip]"
+          git push origin "HEAD:refs/heads/${GITHUB_HEAD_REF}"

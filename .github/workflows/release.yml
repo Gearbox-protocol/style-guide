@@ -7,31 +7,55 @@ on:
 env:
   HUSKY: 0
 
-permissions:
-  contents: write # push tags, GitHub releases
-  issues: write # semantic-release comments
-  pull-requests: write # semantic-release comments
-  id-token: write # npm OIDC trusted publishing
+permissions: {}
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
 
 jobs:
-  release:
+  zizmor:
+    name: Audit workflows
     runs-on: ubuntu-latest
+    permissions:
+      contents: read # checkout
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Run zizmor
+        uses: zizmorcore/zizmor-action@45d7276c9ca790aabd705e31ca99c6185c3e76dd # v0.8.1
+        with:
+          advanced-security: false
+          annotations: true
+
+  release:
+    name: Release
+    needs: zizmor
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # push tags, GitHub releases
+      id-token: write # npm OIDC trusted publishing
+    steps:
+      - name: Checkout
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           fetch-depth: 0
+          persist-credentials: false
 
-      - name: Install pnpm
-        uses: pnpm/action-setup@v6
-
-      - name: Setup node
-        uses: actions/setup-node@v6
+      - name: Setup pnpm and node
+        uses: pnpm/setup@fa36a5ef7dcdefc3a7cb25655c122e00cf6e636e # v3.1.2
         with:
           node-version-file: .nvmrc
+          install: false
+
+      - name: Audit dependencies
+        run: pnpm audit --audit-level high
 
       - name: Install dependencies
-        run: pnpm install
+        run: pnpm install --frozen-lockfile
 
       - name: Release
         env:

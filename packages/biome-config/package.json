@@ -15,6 +15,9 @@
   "publishConfig": {
     "access": "public"
   },
+  "devDependencies": {
+    "@biomejs/biome": "2.6.6"
+  },
   "peerDependencies": {
     "@biomejs/biome": "^2.6.6"
   },
